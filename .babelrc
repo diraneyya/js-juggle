@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "bugfixes": true,
+        "loose": true
+      }
+    ]
+  ],
+  "targets": "defaults",
+  "plugins": ["babel-plugin-inline-all-functions"]
+}

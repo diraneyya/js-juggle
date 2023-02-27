@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/generator": "^7.0.0",
+    "@babel/parser": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/types": "^7.21.2",
+    "babel-plugin-inline-all-functions": "link:../babel-plugin-inline-all-functions"
+  },
+  "engines": {
+    "node": "^18.0.0"
+  },
+  "scripts": {
+    "start": "babel script.js"
+  }
+}

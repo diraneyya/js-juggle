@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        textarea {
+            margin: 0.25lh 0;
+        }
+        .error {
+            outline: 2px solid red;
+            -moz-outline-radius: 2px;
+            outline-offset: 1px;
+        }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" src="https://unpkg.com/sval"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="inlinefunctions.js"></script>
+    <script src="test.js"></script>
+
+    <h1>JS-juggle</h1>
+
+    <h2>Lesson: how function params ⬆️ and return values ⬇️ really work</h2>
+
+    <textarea name="code" id="code" cols="50" rows="10"
+        oninput="localStorage.setItem('code', event.currentTarget.value)"></textarea>
+    <script>
+        document.querySelector("#code").textContent = 
+            localStorage.getItem("code") ??
+            `\
+const getReactGreeting = 
+name => <h1>Hey you wonderful {name}</h1>;
+      
+function App() {
+  return getReactGreeting("Orwa");
+}`;
+    </script>
+
+    <textarea name="transformed" id="transformed" cols="50" rows="10">
+// transformed code will appear here
+    </textarea>
+    <br><input id="inlinefunctions" type="checkbox" checked
+        onchange="buttonHandler()">transform functions</input>
+    <br><button onclick="buttonHandler()">Do it</button>
+  </body>
+</html>
